@@ -64,38 +64,6 @@
 					</ul>
 
 					<iframe src="test3.html" id="Frame1" style="width: 100%; height: 100vh; border: none;">
-    
-					<script>
-							const quizForm = document.querySelector('#quiz-form');
-							quizForm.addEventListener('submit', function(event) {
-							event.preventDefault();
-							const formData = new FormData(quizForm);
-							let Vcount = 0;
-							let Acount = 0;
-							let Kcount = 0;
-							for (const value of formData.values()) {
-								if (value === 'V') {
-									Vcount++;
-								} else if (value === 'A') {
-									Acount++;
-								} else {
-									Kcount++;
-								}
-							}
-							const results = document.createElement('div');
-							results.innerHTML = "<p>Votre profil VAK est :</p>";
-							if (Vcount >= Acount && Vcount >= Kcount) {
-							results.innerHTML += "<p>Visuel</p>";
-							}
-							 else if (Acount >= Vcount && Acount >= Kcount) {
-							results.innerHTML += "<p>Auditif</p>";
-							}
-							 else {
-							results.innerHTML += "<p>Kinesthésique</p>";
-							}
-							quizForm.appendChild(results);
-							});
-							</script>
 					</iframe>
 
 				</footer>
