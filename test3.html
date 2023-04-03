@@ -223,32 +223,34 @@ input[type="submit"] {
 
 <script>
 const quizForm = document.querySelector('#quiz-form');
-quizForm.addEventListener('submit', function(event) {
-event.preventDefault();
-const formData = new FormData(quizForm);
-let scoreA = 0;
-let scoreB = 0;
-let scoreC = 0;
-for (const value of formData.values()) {
-if (value === 'A') {
-scoreA++;
-} else if (value === 'B') {
-scoreB++;
-} else {
-scoreC++;
-}
-}
-const results = document.createElement('div');
-results.innerHTML = "<p>Your VAK profile is:</p>";
-if (scoreA >= scoreB && scoreA >= scoreC) {
-results.innerHTML += "<p>VISUAL</p>";
-} else if (scoreB >= scoreA && scoreB >= scoreC) {
-results.innerHTML += "<p>AUDITORY</p>";
-} else {
-results.innerHTML += "<p>KINESTHETIC</p>";
-}
-quizForm.appendChild(results);
-});
+              quizForm.addEventListener('submit', function(event) {
+              event.preventDefault();
+              const formData = new FormData(quizForm);
+              let Vcount = 0;
+              let Acount = 0;
+              let Kcount = 0;
+              for (const value of formData.values()) {
+                if (value === 'V') {
+                  Vcount++;
+                } else if (value === 'A') {
+                  Acount++;
+                } else {
+                  Kcount++;
+                }
+              }
+              const results = document.createElement('div');
+              results.innerHTML = "<p>Your VAK profile is:</p>";
+              if (Vcount >= Acount && Vcount >= Kcount) {
+              results.innerHTML += "<p>VISUAL</p>";
+              }
+               else if (Acount >= Vcount && Acount >= Kcount) {
+              results.innerHTML += "<p>AUDITORY</p>";
+              }
+               else {
+              results.innerHTML += "<p>KINESTHETIC</p>";
+              }
+              quizForm.appendChild(results);
+              });
 </script>
 
   </body>
