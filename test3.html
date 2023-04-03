@@ -239,13 +239,13 @@ scoreC++;
 }
 }
 const results = document.createElement('div');
-results.innerHTML = "<p>Votre profil VAK est :</p>";
+results.innerHTML = "<p>Your VAK profile is:</p>";
 if (scoreA >= scoreB && scoreA >= scoreC) {
-results.innerHTML += "<p>Visuel</p>";
+results.innerHTML += "<p>VISUAL</p>";
 } else if (scoreB >= scoreA && scoreB >= scoreC) {
-results.innerHTML += "<p>Auditif</p>";
+results.innerHTML += "<p>AUDITORY</p>";
 } else {
-results.innerHTML += "<p>Kinesthésique</p>";
+results.innerHTML += "<p>KINESTHETIC</p>";
 }
 quizForm.appendChild(results);
 });
